@@ -87,7 +87,7 @@
 					<td>
 						<div>
 							<center>
-								<img src="images/nethack_example.png" alt="BLINDER Diagram" width="200px">
+								<img src="images/nethack_example.png" alt="BLINDER Diagram" width="250px">
 							</center>
 							<p class="section_text"> 
 								We present BLINDER, a method for automatically selecting state descriptions from a set of state features for LLM actors. Rather than use manually constructed language observations that require painstaking prompt engineering, we propose using a learned value function for state descriptions. Using this value function and the set of all language features for the current state, BLINDER constructs inputs for an LLM actor to maximize task performance. Resulting state descriptions are relevant and intuitive, generalize well, and improve performance and computational efficiency.
@@ -108,7 +108,7 @@
 					<td>
 						<div>
 							<center>
-								<img src="images/blinder_training.png" alt="BLINDER" width="700px">
+								<img src="images/blinder_training.png" alt="BLINDER" width="600px">
 							</center>
 							<p class="section_text"> 
 								We annotate sampled state descriptions using the liklihood of expert actions from a frozen LLM actor. These liklihoods are used as a reward for training BLINDER's value function for state descriptions. At test time, BLINDER generalizes to new tasks and new LLM actors. We are able to train using smaller actors and then deploy with LLM actors orders of magnitude larger.
