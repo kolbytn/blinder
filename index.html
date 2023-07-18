@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="generator" content="Jekyll v3.8.5">
+  <title>BLINDER</title>
+
+  <link rel="canonical" href="http://kolbytn.github.io/blinder">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+  <meta name="og:title" content="BLINDER">
+  
+  <meta name="description" content="Optimizing State Descriptions with Reinforcement Learning for Language Model Actors">
+
+  <link href="https://getbootstrap.com/docs/4.3/examples/jumbotron/jumbotron.css" rel="stylesheet">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+
+<body style="padding-top: 0px;">
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #029b9e;">
+  <a class="navbar-brand" href="#">BLINDER </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbars">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      <!-- <a class="nav-item nav-link" href="https://arxiv.org/abs/2301.12050" target="_blank">Paper</a> -->
+      <!-- <a class="nav-item nav-link" href="https://github.com/DeckardAgent/deckard" target="_blank">Code</a> -->
+      <!-- <a class="nav-item nav-link" href="https://youtu.be/jaj4Uq-eZWk" target="_blank">Video</a> -->
+    </div>
+  </div>
+</nav>
+
+<main role="main">
+
+	<!-- Main jumbotron -->
+	<div class="jumbotron">
+		<div class="container">
+			<h1 class="display-5">Selective Perception</h1>
+			<h3>Optimizing State Descriptions with Reinforcement Learning for Language Model Actors</h3>
+			<h6>
+				<table>
+					<tr>
+						<td width="250"><a href="http://kolbynottingham.com/" target="_blank">Kolby Nottingham</a></td>
+						<td width="250"><a href="https://yasamanrazeghi.com/" target="_blank">Yasaman Razeghi</a></td>
+						<td width="250"><a href="https://sites.google.com/yonsei.ac.kr/kmkim" target="_blank">Kyungmin Kim</a></td>
+					</tr>
+					<tr>
+						<td><a href="https://jblanier.net/" target="_blank">JB Lanier</a></td>
+						<td><a href="https://www.igb.uci.edu/~pfbaldi/" target="_blank">Pierre Baldi</a></td>
+						<td><a href="https://royf.org/" target="_blank">Roy Fox</a></td>
+						<td><a href="https://sameersingh.org/" target="_blank"></a>Sameer Singh</td>
+					</tr>
+				</table>
+			</h6>
+
+			<p> Large language models (LLMs) have been widely applied as actors for sequential decision making tasks such as robotics and games, utilizing their general world knowledge and planning abilities. However, previous work does little to explore what environment state information is provided to LLM actors via language. Exhaustively describing high-dimensional states can cause impaired performance and high inference costs for LLM actors. To avoid this, previous LLM actors rely on hand-engineered, task-specific protocols to determine which features to communicate about a state and which to leave out. In this work, we propose Brief Language INputs for DEcision-making Responses (BLINDER), a method for automatically selecting concise state descriptions by learning a value function for optimal task-conditioned state feature sets. We evaluate BLINDER on the challenging videogame NetHack and a robotic manipulation task, improving LLM actor success rate while reducing the size of LLM input.
+			</p>
+			
+			<p>
+				<!-- <a class="btn btn-info btn-lg homeButton" href="https://arxiv.org/abs/2301.12050" role="button" target="_blank">Paper&raquo;</a>  -->
+				<!-- <a class="btn btn-info btn-lg homeButton" href="https://github.com/DeckardAgent/deckard" role="button" target="_blank">Code&raquo;</a> -->
+				<!-- <a class="btn btn-info btn-lg homeButton" href="https://youtu.be/jaj4Uq-eZWk" role="button" target="_blank">Video&raquo;</a> -->
+			</p>
+
+		</div>
+	</div>
+
+</main>
+
+<div class="container">
+	<center>
+		<h2>BLINDER</h2>
+			<table>
+				<tr>
+					<td>
+						<div>
+							<center>
+								<img src="images/nethack_example.png" alt="BLINDER Diagram" width="500px">
+							</center>
+							<p class="section_text"> 
+								We present BLINDER, a method for automatically selecting state descriptions from a set of state features for LLM actors. Rather than use manually constructed language observations that require painstaking prompt engineering, we propose using a learned value function for state descriptions. Using this value function and the set of all language features for the current state, BLINDER constructs inputs for an LLM actor to maximize task performance. Resulting state descriptions are relevant and intuitive, generalize well, and improve performance and computational efficiency.
+							</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+	</center>
+	<hr>
+</div>
+
+<div class="container">
+	<center>
+		<h2>State Value Fuction</h2>
+			<table>
+				<tr>
+					<td>
+						<div>
+							<center>
+								<img src="images/blinder_training.png" alt="BLINDER" width="800px">
+							</center>
+							<p class="section_text"> 
+								We annotate sampled state descriptions using the liklihood of expert actions from a frozen LLM actor. These liklihoods are used as a reward for training BLINDER's value function for state descriptions. At test time, BLINDER generalizes to new tasks and new LLM actors. We are able to train using smaller actors and then deploy with LLM actors orders of magnitude larger.
+							</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+	</center>
+	<hr>
+</div>
+
+<div class="container">
+	<center>
+		<h2>Robotic Demo</h2>
+			<table>
+				<tr>
+					<td>
+						<div>
+							<center>
+								<video width="700" height="440" controls>
+								  <source src="images/robot_demo.mp4" type="video/mp4">
+								</video>
+							</center>
+							<p class="section_text"> 
+								In addition to performing well on NetHack, BLINDER improves the performance of LLM actors for real world robotic tasks. We use visual object detection to label objects and spatial relationships in a scene to use as state features ("The donut is to the left and behind the ball"). We then use BLINDER to select which of these object relationships to provide to the LLM actor, given the current task ("Place the objects in the order: ball, soda, doughnut"). The LLM actor then provides high-level actions to the robot to complete the task ("Move the ball to position A"). See our paper for additional details.
+							</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+	</center>
+	<hr>
+</div>
+
+<div class="container">
+  <center>
+		<h2>Citation</h2>
+	</center>
+  <div>
+		<center>
+			<p>If you find this work useful, please cite:</p>
+		</center>
+	</div>
+	<div class="card bg-light" style="max-width: 40rem;">
+		<div class="card-body">
+			<p class="card-text"> 
+				<code id="cite">
+					<font color="black"> 
+					@article{BLINDER2023, <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title = {Selective Perception:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Optimizing State Descriptions with Reinforcement Learning<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for Language Model Actors},<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;author = {Kolby Nottingham and Yasaman Razeghi and<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kyungmin Kim and JB Lanier and Pierre Baldi and<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Roy Fox and Sameer Singh},<br>
+					<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;journal = {arXiv preprint arXiv:2301.12050},<br>  -->
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year = {2023},<br>
+					<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url  = {https://arxiv.org/abs/2301.12050}} -->
+					</font>
+				</code>
+			</p>
+		</div>
+	</div>
+  <hr>
+</div>
+	  
+  <div id="groupContainer">
+	<img src="images/uci.png" class="groupLogo" height="100">
+  </div>
+  <br>
+
+<footer>
+ <center><p>Email correspondence to: <a href="http://kolbynottingham.com/">Kolby Nottingham</a></p></center>
+</footer>
+</body>
+</html>

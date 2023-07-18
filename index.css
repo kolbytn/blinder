@@ -1,0 +1,53 @@
+.section_text {
+    margin-top: 20px;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 99;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    top: -1px;
+    right: 0px;
+    left: 0px;
+    background-color: #23445D!important;
+}
+
+.homeButton {
+    margin: 5px;
+    background-color: #F7B44F!important;
+    border-color: #916E46!important;
+}
+
+.groupLogo {
+    padding: 10px;
+}
+
+#groupContainer {
+    text-align: center;
+}
+
+
+.jumbotron {
+    padding-top: 100px;
+}
+
+@media screen and (max-width: 930px) {
+    .jumbotron {
+        padding-bottom: 5rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .jumbotron {
+        width: 113%;
+    }
+
+}
+
+.card {
+    width: 50vw;
+    margin:auto;
+    border:1px solid black;
+    background:#e0e0e0;
+}
